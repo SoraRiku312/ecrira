@@ -29,8 +29,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="Description"
-        app:layout_constraintStart_toEndOf="@+id/character_name"
-        app:layout_constraintTop_toBottomOf="@+id/character_name" />
+        app:layout_constraintStart_toEndOf="@+id/world_name"
+        app:layout_constraintTop_toBottomOf="@+id/world_name" />
 
     <ImageView
         android:id="@+id/world_image_thumbnail"
