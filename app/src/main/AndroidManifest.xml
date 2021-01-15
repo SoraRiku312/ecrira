@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.williamtburch.sora.ecrira">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE">
+        </uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE">
+    </uses-permission>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ecrira_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ecrira_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat">
+        
+        <activity android:name=".HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CharacterListActivity"
+            android:parentActivityName=".HomeActivity">
+
+        </activity>
+        <activity android:name=".CharacterActivity"
+            android:parentActivityName=".CharacterListActivity">
+
+        </activity>
+        <activity android:name=".WorldPagerActivity"
+            android:parentActivityName=".HomeActivity">
+        </activity>
+        <activity android:name=".CharacterPagerActivity"
+            android:parentActivityName=".CharacterListActivity">
+        </activity>
+        <activity android:name=".WorldListActivity"
+            android:parentActivityName=".HomeActivity">
+
+        </activity>
+        <provider
+            android:authorities="com.williamtburch.sora.ecrira.fileprovider"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:resource="@xml/files"
+                android:name="android.support.FILE_PROVIDER_PATHS"/>
+        </provider>
+    </application>
+
+</manifest>
